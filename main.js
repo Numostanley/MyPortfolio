@@ -3,7 +3,7 @@ const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 const nav = document.querySelector(".nav");
 const toggleMode = document.getElementById("toggle-btn");
-const body = document.querySelector("body");
+let lightTheme = localStorage.getItem("light-theme");
 
 
 // Toggle nav menu on click
@@ -31,10 +31,37 @@ window.addEventListener("scroll", () => {
     nav.classList.toggle("sticky", window.scrollY > 0);
 });
 
-// Toggle light mode
+// LIGHT MODE
+// Enabling light theme
+const enableLightTheme = () => {
+    // Add light theme to the body
+    document.body.classList.add("light-theme");
+
+    // Update light theme in the local storage
+    localStorage.setItem("light-theme", "enabled");
+}
+
+// Disabling light theme
+const disableLightTheme = () => {
+    // Remove light theme from the body
+    document.body.classList.remove("light-theme");
+
+    // Update light theme in the local storage
+    localStorage.setItem("light-theme", null);
+}
+
+// Enable current them even when page is refreshed
+if (lightTheme === "enabled") {
+    enableLightTheme();
+}
+
+// Toggle light theme on click
 toggleMode.addEventListener("click", () =>  {
+    lightTheme = localStorage.getItem("light-theme");
 
-    body.classList.toggle("light-theme")
-    toggle.classList.toggle("light-theme");
-
+    if (lightTheme !== "enabled") {
+        enableLightTheme();
+    } else {
+        disableLightTheme();
+    }
 });
