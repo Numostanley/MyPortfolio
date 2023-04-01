@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* outline: 1px solid red; */
     transition: background 1s ease, color 0.8s ease;
 
 }
@@ -120,19 +119,17 @@ body {
 }
 
 .nav-links {
+    position: relative;
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding: 20px 80px;
+    padding: 20px;
+    left: 24rem;
     transition: right 0.5s ease;
 }
 
-.nav-links li {
-    position: relative;
-    right: -260px;
-}
 
 .nav-links li a {
     position: relative;
@@ -148,7 +145,7 @@ body {
     width: 0;
     left: 0;
     bottom: 2px;
-    height: 2px;
+    height: 3px;
     background: #dadada;
     transition: 0.5s ease;
 }
@@ -207,12 +204,11 @@ body {
 
 /* ========== Hero Section ======== */
 .hero {
-    position: relative;
     display: flex;
-    justify-content: space-between;
-    padding: 0 100px;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
+    gap: 3rem;
 }
 
 .hero-img {
@@ -222,9 +218,6 @@ body {
 .hero-texts {
     justify-content: center;
     align-items: center;
-    position: relative;
-    top: 160px;
-    left: 60px;
     color: #fff;
 }
 
@@ -297,10 +290,8 @@ body {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     padding: 10px 40px;
-}
-
-#about p {
     text-align: justify;
+    line-height: 1.5rem;
 }
 
 .skills {
@@ -370,7 +361,7 @@ body {
 
 .project-lists div,
 .open-source div {
-    border: 1.5px solid #4b0082;
+    border: 1px solid #4b0082;
     padding: 20px 0;
     font-size: 13px;
     border-radius: 10px;
@@ -428,7 +419,7 @@ body {
 
 .open-source div {
     border-radius: 10px;
-    margin: 20px;
+    margin: 10px;
     transition: transform 0.5s;
 }
 /* ========== End of Project section ============ */
@@ -442,7 +433,7 @@ body {
 }
 
 .contact-left {
-    margin-top: -30px;
+    margin-top: -10px;
 }
 
 
@@ -501,33 +492,57 @@ body {
 }
 /* End of footer */
 
-/* ====== Mobile View ======== */
-@media (max-width: 600px) {
-    .hero {
-        padding: 0 10px;
+/* ====== Small Mobile View ======== */
+@media screen and (max-width: 320px) {
+    .nav {
+        padding: 0 5px;
     }
 
-    .hero img {
-        position: absolute;
-        width: 200px;
-        top: 80px;
-        margin-left: 30px;
+    .logo {
+        margin-left: 0;
     }
 
-    .hero-texts {
-        margin-top: 100px;
-        margin-right: 60px;
+    .hero-texts p {
+        font-size: 10px;
     }
 
-    .hero-texts .socials a i {
-        left: 0;
+    .about {
+        padding: 5px 10px;
     }
 
-    .hero-texts h1 {
-        font-size: 28px;
+    .projects {
+        padding: 0;
+        margin: 0;
+    }
+
+    .project-lists,
+    .open-source {
         padding: 10px 0;
     }
 
+    .project-lists div {
+        padding: 10px 0;
+    }
+
+    .project-lists div:hover,
+    .open-source div:hover {
+        transform: unset;
+    }
+
+    .project-lists p,
+    .open-source p {
+        padding: 2px 0;
+        text-align: unset;
+    }
+
+    .contact-left {
+        margin: 30px 0 10px 0;
+        display: block;
+    }
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
     /* ========== Hamburger Menu ============ */
     .menu-btn {
         display: block;
@@ -654,8 +669,24 @@ body {
         background: transparent;
     }
 
-    .btn {
+    .hero {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .hero img {
+        width: 200px;
+    }
+
+    .hero-texts .socials a i {
         left: 0;
+    }
+
+    .hero-texts h1 {
+        font-size: 28px;
+        padding: 10px 0;
     }
 
     .about h1 {
@@ -663,7 +694,8 @@ body {
     }
 
     .about p {
-        padding: 0;
+        padding: 0 10px;
+        text-align: unset;
     }
 
     .skills {
@@ -675,6 +707,10 @@ body {
         margin: 0 0 20px 0;
     }
 
+    .projects {
+        padding: 0 30px;
+    }
+
     .project-lists,
     .open-source {
         display: block;
@@ -684,12 +720,18 @@ body {
     .project-lists p,
     .open-source p {
         margin-top: 5px;
+        padding: 5px;
+        text-align: unset;
     }
 
     .project-lists div,
     .open-source div {
-        margin: 10px 0 20px 0;
         padding: 10px 20px;
+    }
+
+    .project-lists div:hover,
+    .open-source div:hover {
+        transform: unset;
     }
 
     .project-lists i,
@@ -705,16 +747,21 @@ body {
     }
 
     .contact-items {
-        margin-top: -40px;
+        margin-top: -10px;
     }
 
 
     .contact-left p {
         font-size: 10px;
+        text-align: center;
     }
 
     .contact-items p i {
         font-size: 12px;
+    }
+
+    .socials a i:hover {
+        transform: unset;
     }
 
     .copyright {
@@ -727,23 +774,19 @@ body {
 
 }
 
-
 /* Tablet View */
-@media (max-width: 768px) {
+@media screen and (max-width: 900px) {
+    .nav-links {
+        margin-left: -10rem;
+    }
+
     .hero {
-        margin: 0 auto;
         align-items: center;
         justify-content: center;
     }
 
     .hero-img {
         width: 250px;
-    }
-
-    .hero-texts {
-        left: 60px;
-        top: 50%;
-        min-width: 300px;
     }
 
     .hero-texts h1 {
@@ -755,14 +798,13 @@ body {
         font-size: 14px;
     }
 
-    .nav-links li {
-        right: -120px;
-    }
-
 
     .hero-texts .socials i {
-        position: relative;
         font-size: 18px;
+    }
+
+    #about p {
+        text-align: unset;
     }
 
     .skills {
@@ -812,6 +854,23 @@ body {
         padding: 0 10px;
     }
 
+    .project-lists div:hover,
+    .open-source div:hover {
+        transform: unset;
+    }
+}
+
+/* Large displays */
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        margin-right: 10rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .nav-links {
+        left: 18rem;
+    }
 }
 
 /* Scrollbar Section */
