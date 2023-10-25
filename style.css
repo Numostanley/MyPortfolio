@@ -412,6 +412,18 @@ body {
     left: 40px;
 }
 
+.item2 .btn {
+    position: relative;
+    font-size: 12px;
+    left: 40px;
+}
+
+.item3 .btn {
+    position: relative;
+    font-size: 12px;
+    left: 40px;
+}
+
 .open-source {
     display: grid;
     padding: 0 90px;
